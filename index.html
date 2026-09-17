@@ -5,26 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <style>
-        header{
-            background-color: rgb(106, 139, 139);
-            color: azure;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        body {
+            background-color: #f4f6f8;
+            color: #333333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        header {
+            background-color: #3a5a40;
+            color: #ffffff;
             text-align: center;
             max-width: 800px;
-            margin: 0 auto;
-            border: 5px solid
+            margin: 0 auto 20px auto;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
-        main{
-            background-color: rgb(175, 160, 160);
-            color: rgb(86, 138, 120);
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        header p {
+            color: #dad7cd;
+            font-size: 1rem;
+        }
+        main {
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        article {
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        h2 {
+            color: #2b2d42;
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+        }
+        .author {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .post-image {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+        p {
+            color: #495057;
+        }
+        /* Pequeno estilo para o ponteiro do mouse */
+        button {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Meu blog tech</h1>
-    <p>Vou compartilhar conhecimentos sobre tecnologia e programação.</p>
-    
-    <h2>Site aleatório</h2>
-    <p>Por: A-srr<br>Alice Soares Ramalho Rodrigues</p>
-    <p>Já já acrescento mais conteúdo.</p>
+    <header>
+        <h1>Meu blog tech</h1>
+        <p>Sobre mim e tecnologia.</p>
+    </header>
+
+    <main>
+        <article>
+            <h2>Site aleatório</h2>
+            <p class="author">Por: A-srr (Alice Soares Ramalho Rodrigues)</p>
+            <img src="unnamed.jpg" alt="Imagem do post" class="post-image">
+            <p>Já já acrescento mais conteúdo.</p>
+
+            <!-- Botão com o ícone e a tag <span> -->
+            <button>💖 <span>0</span></button>
+        </article>
+    </main>
+
+    <!-- Código JavaScript para deixar o botão clicável -->
+    <script>
+        const botao = document.querySelector('button');
+        const contador = document.querySelector('span');
+
+        let quantidade = 0;
+
+        botao.addEventListener('click', function() {
+            quantidade = quantidade + 1;
+            contador.textContent = quantidade;
+        });
+    </script>
 </body>
 </html>
